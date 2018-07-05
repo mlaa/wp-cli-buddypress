@@ -24,4 +24,4 @@ if [ ! -d $BP_DIR/src ]; then
 fi
 
 # Edit WordPress testing files to load BuddyPress.
-echo "require 'bootstrap-buddypress.php';" >> tests/bootstrap.php
+grep -qF bootstrap-buddypress.php tests/bootstrap.php || echo "require 'bootstrap-buddypress.php';" >> tests/bootstrap.php
